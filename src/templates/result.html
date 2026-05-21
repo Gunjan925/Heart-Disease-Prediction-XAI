@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Prediction Result</title>
+
+    <link rel="stylesheet"
+        href="{{ url_for('static', filename='result.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="result-card">
+
+            <!-- TITLE -->
+
+            <h1>
+                Heart Disease Prediction Result
+            </h1>
+
+            <!-- RESULT -->
+
+            <div class="result-section">
+
+                <h2>
+                    Heart Disease
+                </h2>
+
+                <div class="
+                    result-badge
+                    {% if has_disease == 'YES' %}
+                        danger
+                    {% else %}
+                        safe
+                    {% endif %}
+                ">
+
+                    {{ has_disease }}
+
+                </div>
+
+            </div>
+
+            <!-- PROBABILITY -->
+
+            <div class="info-card">
+
+                <h3>
+                    Risk Probability
+                </h3>
+
+                <p>
+                    {{ risk_probability }}
+                </p>
+
+            </div>
+
+            <!-- RECOMMENDATION -->
+
+            <div class="recommendation-card">
+
+                <h3>
+                    Recommendation
+                </h3>
+
+                <p>
+                    {{ recommendation }}
+                </p>
+
+            </div>
+
+            <!-- EXPLANATION TABLE -->
+
+            <div class="table-section">
+
+                <h2>
+                    Explanation
+                </h2>
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Feature
+                            </th>
+
+                            <th>
+                                Value
+                            </th>
+
+                            <th>
+                                Impact
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        {% for row in explanations %}
+
+                        <tr>
+
+                            <td>
+                                {{ row[0] }}
+                            </td>
+
+                            <td>
+                                {{ row[1] }}
+                            </td>
+
+                            <td class="
+                                {% if 'Increased' in row[2] %}
+                                    increase
+                                {% else %}
+                                    decrease
+                                {% endif %}
+                            ">
+
+                                {{ row[2] }}
+
+                            </td>
+
+                        </tr>
+
+                        {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <!-- BUTTON -->
+
+            <a href="/" class="back-btn">
+
+                Check Another Patient
+
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

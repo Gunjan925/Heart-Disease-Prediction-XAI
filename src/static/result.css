@@ -1,0 +1,176 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:40px;
+}
+
+.container{
+    width:100%;
+    max-width:1200px;
+}
+
+.result-card{
+    background:white;
+    border-radius:24px;
+    padding:45px;
+    box-shadow:0 15px 45px rgba(0,0,0,0.35);
+}
+
+h1{
+    text-align:center;
+    color:#0f172a;
+    margin-bottom:35px;
+    font-size:40px;
+}
+
+.result-section{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.result-section h2{
+    color:#334155;
+    margin-bottom:15px;
+}
+
+.result-badge{
+    display:inline-block;
+    padding:16px 40px;
+    border-radius:14px;
+    font-size:24px;
+    font-weight:bold;
+    color:white;
+}
+
+.danger{
+    background:#dc2626;
+}
+
+.safe{
+    background:#16a34a;
+}
+
+.info-card,
+.recommendation-card{
+    background:#f8fafc;
+    padding:25px;
+    border-radius:18px;
+    margin-bottom:25px;
+    border:2px solid #e2e8f0;
+}
+
+.info-card h3,
+.recommendation-card h3{
+    color:#1e293b;
+    margin-bottom:12px;
+    font-size:22px;
+}
+
+.info-card p,
+.recommendation-card p{
+    color:#334155;
+    font-size:18px;
+    line-height:1.6;
+}
+
+.table-section{
+    margin-top:35px;
+}
+
+.table-section h2{
+    margin-bottom:20px;
+    color:#0f172a;
+    font-size:30px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    overflow:hidden;
+    border-radius:16px;
+}
+
+thead{
+    background:#2563eb;
+    color:white;
+}
+
+thead th{
+    padding:18px;
+    text-align:left;
+    font-size:17px;
+}
+
+tbody tr{
+    border-bottom:1px solid #e2e8f0;
+    transition:0.3s;
+}
+
+tbody tr:hover{
+    background:#f1f5f9;
+}
+
+tbody td{
+    padding:18px;
+    font-size:16px;
+    color:#334155;
+}
+
+.increase{
+    color:#dc2626;
+    font-weight:bold;
+}
+
+.decrease{
+    color:#16a34a;
+    font-weight:bold;
+}
+
+.back-btn{
+    display:block;
+    width:100%;
+    text-align:center;
+    margin-top:35px;
+    padding:18px;
+    background:#2563eb;
+    color:white;
+    text-decoration:none;
+    border-radius:14px;
+    font-size:18px;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.back-btn:hover{
+    background:#1d4ed8;
+    transform:translateY(-2px);
+}
+
+@media(max-width:900px){
+
+    .result-card{
+        padding:28px;
+    }
+
+    h1{
+        font-size:30px;
+    }
+
+    .table-section{
+        overflow-x:auto;
+    }
+
+    table{
+        min-width:700px;
+    }
+}
