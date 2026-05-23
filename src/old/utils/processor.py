@@ -1,8 +1,8 @@
 import pandas as pd
 import joblib
 
-encoder = joblib.load("../models/heart/one_hot_encoder.pkl")
-scaler = joblib.load("../models/heart/standard_scaler.pkl")
+encoder = joblib.load("../../models/heart/old_models/old_one_hot_encoder.pkl")
+scaler = joblib.load("../../models/heart/old_models/old_standard_scaler.pkl")
 
 def preprocess_data(input_dict):
     input_data = pd.DataFrame([input_dict])

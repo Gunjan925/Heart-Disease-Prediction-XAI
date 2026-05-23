@@ -1,6 +1,6 @@
 import joblib
 
-logistic_regression_model = joblib.load("../models/heart/logistic_regression_model.pkl")
+logistic_regression_model = joblib.load("../../models/heart/old_models/old_logistic_regression_model.pkl")
 
 def make_prediction(input_data):
     result = logistic_regression_model.predict(input_data)[0]

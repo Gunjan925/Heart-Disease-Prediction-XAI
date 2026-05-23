@@ -1,6 +1,6 @@
 import joblib
 
-lr_explainer = joblib.load("../models/heart/lr_shap_explainer.pkl")
+lr_explainer = joblib.load("../../models/heart/old_models/old_lr_shap_explainer.pkl")
 
 def generate_explanation(input_data,original_input_data):
     lr_shap_values = lr_explainer(input_data)
