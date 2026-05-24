@@ -11,9 +11,11 @@ def generate_explanation(input_data,original_input_data):
         if col in original_input_data.columns:
             value = original_input_data.iloc[0][col]
             if impact > 0:
-                explanations.append([col,str(value),"Increased risk of heart disease"])
+                # explanations.append([col,str(value),"Increased risk of heart disease"])
+                explanations.append([col,str(value),"Increased contribution towards heart disease prediction"])
             elif impact < 0:
-                explanations.append([col,str(value),"Decreased risk of heart disease"])
+                # explanations.append([col,str(value),"Decreased risk of heart disease"])
+                explanations.append([col,str(value),"Decreased contribution towards heart disease prediction"])
 
         else:
             split_col = col.split("_")
@@ -34,8 +36,10 @@ def generate_explanation(input_data,original_input_data):
                     encoded_value = thal_reverse_map.get(str(encoded_value),encoded_value)
 
                 if impact > 0:
-                    explanations.append([original_feature,encoded_value,"Increased risk of heart disease"])
+                    # explanations.append([original_feature,encoded_value,"Increased risk of heart disease"])
+                    explanations.append([original_feature,encoded_value,"Increased contribution towards heart disease prediction"])
                 elif impact < 0:
-                    explanations.append([original_feature,encoded_value,"Increased risk of heart disease"])
+                    # explanations.append([original_feature,encoded_value,"Increased risk of heart disease"])
+                    explanations.append([original_feature,encoded_value,"Decreased contribution towards heart disease prediction"])
 
     return explanations
